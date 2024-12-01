@@ -14,8 +14,8 @@ namespace Dataset {
      */
     class Dataset {
     private:
-        std::unordered_map<std::string, int> headerMap; // Maps column names to indices
-        std::vector<std::vector<std::string>> data;     // Stores the rows of data
+        std::vector<std::string> headers;  // Column names
+        std::unordered_map<std::string, std::vector<std::string>> data;      // Stores the rows of data
 
     public:
         /**
@@ -42,6 +42,7 @@ namespace Dataset {
          * @return a vector of strings containing the values from that column
          */
         std::vector<std::string> get_column(const std::string& column_name) const;
+
 
         /**
          * @brief Gets the mean of a numeric column
@@ -72,10 +73,19 @@ namespace Dataset {
         std::vector<std::string> operator[](const std::string& column_name) const;
 
         /**
+         * @brief Adds a coloumn to the data 
+         * @param column_name  values ,values contain the values to be added in new coloumn created
+         * @return return true if coloumn was sucessfully added to the data
+         */
+
+         void add_column(const std::string& column_name, const std::vector<std::string>& values);
+
+        /**
          * @brief Generates a localized greeting string based on the language code
          * @param lang the language to greet in (default is English)
          * @return the greeting string
          */
+       
         std::string dataset(LanguageCode lang = LanguageCode::EN) const;
     };
 
