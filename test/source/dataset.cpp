@@ -6,9 +6,10 @@
 #include <map>
 
 class DatasetTest : public ::testing::Test {
-protected:
-    Dataset::Dataset dataset;
 
+protected:
+
+    Dataset::Dataset dataset;
     void SetUp() override {
         // Initialize a dataset for testing.
         dataset.add_column("Name", {"Alice", "Bob", "Charlie"});
@@ -20,7 +21,6 @@ protected:
 TEST_F(DatasetTest, AddColumn) {
     // Test adding a new column.
     dataset.add_column("Country", {"USA", "USA", "USA"});
-
     // Check if the column was added correctly.
     auto country_column = dataset.get_column("Country");
     EXPECT_EQ(country_column.size(), 3);
@@ -83,7 +83,6 @@ TEST_F(DatasetTest, GetColumn) {
 TEST_F(DatasetTest, Exceptions) {
     // Test adding a column with a mismatched size.
     EXPECT_THROW(dataset.add_column("Invalid", {"Too", "Many", "Values", "Here"}), std::invalid_argument);
-
     // Test accessing a non-existent column.
     EXPECT_THROW(dataset.get_column("DoesNotExist"), std::out_of_range);
 }
