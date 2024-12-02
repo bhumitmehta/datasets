@@ -1,10 +1,14 @@
 #pragma once
 
 #include "io.h"
+#include "statistics.h"
+#include "utils.h"
+#include "manipulation.h"
+
 #include <string>
 #include <unordered_map>
 #include <vector>
-#include "statistics.h"
+
 namespace Dataset {
 
     // Enum for language codes to be used for localized greetings
@@ -24,6 +28,8 @@ namespace Dataset {
          * @param file_path the path to the CSV file to load
          */
         Dataset(const std::string& file_path);
+
+        Dataset();
 
         /**
          * @brief Loads a dataset from a CSV file
@@ -57,12 +63,22 @@ namespace Dataset {
          */
         void add_column(const std::string& column_name, const std::vector<std::string>& values);
 
-
+        std::vector<std::string> Dataset::operator[](const std::string& column_name) const ;
 
         double mean(const std::string& column_name) const;
 
         double median(const std::string& column_name) const;
 
         std::string mode(const std::string& column_name) const;
+
+        std::string Dataset::dataset(LanguageCode lang) const;
+
+
+
+        void sort_by_column(const std::string& column_name, bool ascending = true);
+        Dataset filter(const std::string& column_name, const std::string& value) const;
+        void drop_column(const std::string& column_name);
+        void drop_row(int row_index);
+        Dataset merge(const Dataset& other, const std::string& column_name, bool is_outer_join = false);
     };
 } // namespace Dataset
