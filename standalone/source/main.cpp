@@ -1,6 +1,6 @@
 // #include <greeter/greeter.h>
 
-#include"/home/naruto/projects/datasets/include/dataset/dataset.h"
+#include"dataset/dataset.h"
 #include <cxxopts.hpp>
 #include <iostream>
 #include <string>
@@ -10,7 +10,7 @@
 
 auto main(int argc, char** argv) -> int {
 
-    Dataset::Dataset dataset("/home/naruto/projects/datasets/audible_uncleaned.csv");
+    Dataset::Dataset::Dataset dataset("/home/naruto/projects/datasets/audible_uncleaned.csv");
     std::cout<<"hello world"<<std::endl;
     // Add columns
 

@@ -3,9 +3,9 @@
 #include <string>
 #include "dataset.h"
 
+
 namespace Dataset {
-    class Dataset{
-    public:
+    class Dataset {
     /**
      * @brief Sorts the dataset based on a specified column.
      * @param column_name The column to sort by.
