@@ -1,4 +1,4 @@
-#pragma once
+#include "utils.h"
 #include "dataset.h"
 #include <vector>
 #include <string>
@@ -16,6 +16,6 @@ namespace Dataset {
         double median(const std::string& column_name) const;
 
         std::string mode(const std::string& column_name) const;
-    };
 
+    };
 }  // namespace Dataset
