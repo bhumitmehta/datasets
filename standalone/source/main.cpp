@@ -10,14 +10,10 @@
 
 auto main(int argc, char** argv) -> int {
 
-
     Dataset::Dataset dataset("/home/naruto/projects/datasets/audible_uncleaned.csv");
     std::cout<<"hello world"<<std::endl;
     // Add columns
 
-
-
-    
     // Access column data
     std::vector<std::string> names = dataset["name"];
     std::cout<<dataset["name"][0];

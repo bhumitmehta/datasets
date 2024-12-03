@@ -1,7 +1,7 @@
 #include "dataset.h"
 #include "statistics.h"
-#include "utils.h"
 #include <stdexcept>
+#include "statistics.h"
 #include<map>
 
 namespace Dataset {
@@ -50,7 +50,7 @@ namespace Dataset {
      }
 
     std::string Dataset::mode(const std::string& column_name) const { 
-         std::vector<std::string> column = get_column(column_name);
+        std::vector<std::string> column = get_column(column_name);
         std::map<std::string, int> frequency_map;
 
         for (const auto& value : column) {
