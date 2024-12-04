@@ -5,7 +5,7 @@
 
 
 namespace Dataset {
-    class Dataset {
+    
     /**
      * @brief Sorts the dataset based on a specified column.
      * @param column_name The column to sort by.
@@ -41,5 +41,5 @@ namespace Dataset {
      * @return A new dataset that is the result of the merge.
      */
     Dataset merge(const Dataset& other, const std::string& column_name, bool is_outer_join = false);
-    };
+
 } // namespace Dataset

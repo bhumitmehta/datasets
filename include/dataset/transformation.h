@@ -8,8 +8,8 @@
 
 namespace Dataset {
 
-    class Dataset {
-    public:
+    
+    
         /**
          * @brief Normalizes a numeric column to the range [0, 1].
          * @param column_name the name of the column to normalize.
@@ -52,6 +52,6 @@ namespace Dataset {
          * @return a vector of logarithmically transformed values.
          */
         std::vector<double> log_transform(const std::string& column_name);
-    };
+    
 
 }  // namespace Dataset

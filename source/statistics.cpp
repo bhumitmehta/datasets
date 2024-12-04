@@ -1,8 +1,9 @@
 #include "dataset.h"
-#include "statistics.h"
+
 #include <stdexcept>
-#include "statistics.h"
+
 #include<map>
+
 
 namespace Dataset {
 
@@ -69,4 +70,4 @@ namespace Dataset {
      }
 }
 
-
+// std::string Dataset::mode(const std::string& column_name) { return std::string(); }

@@ -10,7 +10,7 @@
 
 auto main(int argc, char** argv) -> int {
 
-    Dataset::Dataset::Dataset dataset("/home/naruto/projects/datasets/audible_uncleaned.csv");
+    Dataset dataset("/home/naruto/projects/datasets/audible_uncleaned.csv");
     std::cout<<"hello world"<<std::endl;
     // Add columns
 

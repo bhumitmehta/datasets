@@ -65,11 +65,10 @@ namespace Dataset {
 
         std::vector<std::string> Dataset::operator[](const std::string& column_name) const ;
 
-        double mean(const std::string& column_name) const;
 
-        double median(const std::string& column_name) const;
 
-        std::string mode(const std::string& column_name) const;
+
+
 
         std::string Dataset::dataset(LanguageCode lang) const;
 

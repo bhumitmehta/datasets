@@ -1,11 +1,10 @@
 #include"dataset.h"
 #include"manipulation.h"
 #include <stdexcept>
-
-
+#include <algorithm>
+ 
 namespace Dataset {
-    class Dataset {
-
+    
 
         void Dataset::sort_by_column(const std::string& column_name, bool ascending) {
             auto it = headers.find(column_name);
@@ -34,6 +33,14 @@ namespace Dataset {
         }
 
          Dataset filter(const std::string& column_name, const std::string& value) const{
+            auto it = headers.find(column_name);
+
+            if (it == headers.end()) {
+                throw std::runtime_error("Column not found: " + column_name);
+            }
+            Dataset::Dataset newDataSet;
+            for_each(headers.begin(),headers.end(),[](int index))
+
 
          }
          void drop_column(const std::string& column_name){
@@ -45,5 +52,5 @@ namespace Dataset {
          Dataset merge(const Dataset& other, const std::string& column_name, bool is_outer_join = false){
 
          }
-    };
+    
 }

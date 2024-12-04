@@ -3,7 +3,7 @@
 #include <string>
 
 namespace Dataset {
-    class Dataset;
+    
 
     /**
      * @brief Function to load dataset from a CSV file
